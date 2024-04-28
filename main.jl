@@ -31,7 +31,7 @@ elseif question == "no"
     println("Ok!")
 
 else 
-    println("Invalid awnser... Anyway, let's go to the results!")
+    println("Invalid answer... Anyway, let's go to the results!")
 
 end
 
