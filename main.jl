@@ -1,7 +1,22 @@
-# Adding custom modules
-include("./libs/train_df_creation.jl")
-include("./libs/test_df_creation.jl")
-include("./libs/ml_model.jl")
+# Import modules
+
+using Pkg
+Pkg.add("DataFrames")
+Pkg.add("CSV")
+Pkg.add("Distributions")
+Pkg.add("DecisionTree")
+Pkg.add("ScikitLearn")
+
+using DataFrames
+using CSV
+using Distributions
+using DecisionTree
+using ScikitLearn
+using ScikitLearn.CrossValidation
+
+include("libs/train_df_creation.jl")
+include("libs/test_df_creation.jl")
+include("libs/ml_model.jl")
 
 # Main scope
 

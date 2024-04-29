@@ -1,21 +1,10 @@
-# Adding modules
-using Pkg
-Pkg.add("DataFrames")
-Pkg.add("CSV")
-Pkg.add("Distributions")
-
-# Import modules
-using DataFrames
-using CSV
-using Distributions
-
 # Now, we are going to apply the operations on the
 # training set to the test set
 
 function df_test_creation()
     # Uploading test data 
     
-    df_test = CSV.read("/Users/gabilio/Documents/titanic_kaggle/data/test.csv", DataFrame)
+    df_test = CSV.read("./data/test.csv", DataFrame)
 
     # Filling the misses in the age column with Gaussian
     # distribution. The mean and std were calculated previously

@@ -1,14 +1,3 @@
-# Adding modules
-using Pkg
-Pkg.add("DataFrames")
-Pkg.add("CSV")
-Pkg.add("Distributions")
-
-# Import modules
-using DataFrames
-using CSV
-using Distributions
-
 # After studies on this DataFrame, certain operations
 # will be done, with the aim to get better results in
 # the ML model training
@@ -16,7 +5,7 @@ using Distributions
 function df_train_creation()
     # Uploading training data 
     
-    df_train = CSV.read("/Users/gabilio/Documents/titanic_kaggle/data/train.csv", DataFrame)
+    df_train = CSV.read("./data/train.csv", DataFrame)
 
     # Embarked has 2 missing rows... As it is only 2, it
     # can be dropped with no big problems

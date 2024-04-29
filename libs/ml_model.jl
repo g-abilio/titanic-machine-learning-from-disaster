@@ -1,17 +1,3 @@
-# Adding modules
-using Pkg
-Pkg.add("DecisionTree")
-Pkg.add("ScikitLearn")
-
-# Adding custom modules
-include("train_df_creation.jl")
-include("test_df_creation.jl")
-
-# Import modules
-using DecisionTree
-using ScikitLearn
-using ScikitLearn.CrossValidation
-
 # Function that will be responsible to make the
 # model instantiation, learning and accuracy testing,
 # as well as train-test split
@@ -48,5 +34,5 @@ function CSV_data()
     df_test_ = df_test_creation()
     survived = ScikitLearn.predict(model, Matrix(df_test_))
     kaggle_df = DataFrame(PassengerId = 892:1309, Survived = survived)
-    CSV.write("/Users/gabilio/Documents/titanic_kaggle/data/kaggle.csv", kaggle_df)
+    CSV.write("./data/kaggle.csv", kaggle_df)
 end
